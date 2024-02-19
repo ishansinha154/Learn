@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add your CSS file link here -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <section class="navbar">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">Your Logo</div>
+                <div class="navbar-links">
+                    <a href="index.html" class="login">Login</a>
+                    <a href="signin.html" class="register">Register</a>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <section class="searchbar">
+        <div class="search-card">
+            <input type="text" id="locationInput" placeholder="Enter Location">
+            <button onclick="searchLocation()">Search</button>
+        </div>
+    </section>
+
+    <script>
+
+        function searchLocation() {
+            var locationInput = document.getElementById("locationInput").value;
+            alert("Searching for location: " + locationInput);
+            // You can perform further actions such as making an API call for location search here
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Listing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Add Property Listing</h1>
+    <form action="/add_listing" method="post" enctype="multipart/form-data">
+        <label for="user_id">User ID:</label>
+        <input type="text" id="user_id" name="user_id" required><br>
+       
+        <label for="property_name">Property Name:</label>
+        <input type="text" id="property_name" name="property_name" required><br>
+       
+        <label for="property_location">Property Location:</label>
+        <input type="text" id="property_location" name="property_location" required><br>
+       
+        <label for="property_size">Property Size (NO. of bedrooms):</label>
+        <input type="text" id="property_size" name="property_size" required><br>
+       
+        <label for="property_amentities">Property Amentities (comma-separated):</label>
+        <input type="text" id="property_amentities" name="property_amentities"><br>
+       
+        <label for="property_status">Property Status:</label>
+        <select id="property_status" name="property_status">
+            <option value="for_rent">For Rent</option>
+            <option value="for_sale">For Sale</option>
+            <option value="both">Both</option>
+        </select><br>
+       
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image" accept="image/*"><br>
+       
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

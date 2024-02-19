@@ -1,0 +1,479 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: 'Poppins', sans-serif;
+  }  
+  .bg-img {
+  
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+  }
+  .bg-img:after {
+    position: absolute;
+    content: "";
+    top: 88px;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  .content {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    z-index: 999;
+    text-align: center;
+    padding: 19px 32px;
+    width: 370px;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
+  }
+  .content header {
+    color: white;
+    font-size: 33px;
+    font-weight: 600;
+    margin: 0 0 35px 0; 
+  }
+  .field {
+    position: relative;
+    height: 45px;
+    width: 100%;
+    display: flex;
+    background: rgba(255, 255, 255, 0.94);
+  }
+  .field span {
+    color: #222;
+    width: 40px;
+    line-height: 45px;
+  }
+  .field input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #222;
+    font-size: 16px; 
+  }
+  .space {
+    margin-top: 16px;
+  }
+  
+  .pass {
+    text-align: left;
+    margin: 10px 0;
+  }
+  .pass a {
+    color: white;
+    text-decoration: none; 
+  }
+  
+  .field input[type="submit"] {
+    background: #3498db;
+    border: 1px solid #2691d9;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer; 
+  }
+  
+  .signup {
+    font-size: 15px;
+    color: white; 
+  }
+  .signup a {
+    color: #3498db;
+    text-decoration: none;
+  }
+       
+  * {
+      margin: 0;
+      padding: 0;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    margin:  0;
+    padding:  0;
+    background-color: #f4f4f4;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    padding:  20px  0;
+  }
+  
+  form {
+    width:  80%;
+    max-width:  600px;
+    margin:  50px auto;
+    padding:  20px;
+    border:  1px solid #ccc;
+    background-color: white;
+    box-shadow:  0  0  10px rgba(0,  0,  0,  0.1);
+  }
+  
+  label {
+    display: block;
+    margin-bottom:  5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"], select {
+    width:  100%;
+    padding:  10px;
+    margin-bottom:  20px;
+    border:  1px solid #ddd;
+    border-radius:  4px;
+  }
+  
+  input[type="file"] {
+    margin-top:  10px;
+  }
+  
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding:  10px  20px;
+    border: none;
+    border-radius:  4px;
+    cursor: pointer;
+    float: right;
+    position: relative;
+    top: -25px;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Custom CSS */
+  body {
+    font-family: Arial, sans-serif;
+    margin:   0;
+    padding:   0;
+    background-color: #f4f4f4;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    padding:   20px   0;
+  }
+  
+  form {
+    max-width:   600px;
+    margin:   0 auto;
+    padding:   20px;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:   20px;
+    padding:   20px;
+  }
+  
+  .card {
+    background-color: #fff;
+    border:   1px solid #ddd;
+    border-radius:   4px;
+    width:   300px;
+    padding:   10px;
+    box-shadow:   0   2px   4px rgba(0,   0,   0,   0.1);
+  }
+  
+  .card img {
+    width:   100%;
+    height: auto;
+    border-radius:   4px;
+  }
+  
+  .card-content {
+    padding:   10px;
+  }
+  
+  .card-content h2 {
+    margin:   0;
+    padding:   0;
+    font-size:   1.2em;
+  }
+  
+  .card-content p {
+    margin:   0;
+    padding:   0;
+    font-size:   0.9em;
+    color: #666;
+  }
+  
+  .card-content a {
+    display: inline-block;
+    margin-top:   10px;
+    text-decoration: none;
+    color: #007bff;
+    padding:   5px   10px;
+    border:   1px solid #007bff;
+    border-radius:   4px;
+  }
+  
+  .card-content a:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  /* General Styles */
+  * {
+    margin:  0;
+    padding:  0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height:  1.6;
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #333;
+    color: white;
+    padding:  1rem;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Hero Section Styles */
+  .hero {
+    background-color: #f4f4f4;
+    padding:  2rem;
+    text-align: center;
+  }
+  
+  .search-container {
+    max-width:  600px;
+    margin:  0 auto;
+  }
+  
+  .search-container h1 {
+    font-size:  2rem;
+    margin-bottom:  1rem;
+  }
+  
+  .search-container form input[type="text"],
+  .search-container form select {
+    width:  100%;
+    padding:  0.5rem;
+    margin-bottom:  1rem;
+    border:  1px solid #ccc;
+  }
+  
+  .search-container form button {
+    background-color: #333;
+    color: white;
+    padding:  0.5rem  1rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+   }
+   .navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+   }
+   .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+   }
+   .logo {
+    font-size: 1.5rem;
+   }
+   .navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+   }
+   .navbar-links a:hover {
+    text-decoration: underline;
+   }
+   /* body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   } */
+   .search-card {
+    background-color: #bb8686;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 130px;
+    width: 33em;
+    height: 8em;
+    display: flex;
+    justify-content: center;
+    left: 28%;
+   }
+   input[type="text"] {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+    width: 42em;
+    outline: none;
+    margin-top: 22px;
+   }
+  
+   #signcomp1{
+      position: relative;
+      top: 17px;
+   }
+   
+  
+   button {
+    background-color: #2f3133;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    outline: none;
+    margin-left: 21px;
+    position: relative;
+    top: 1px;
+   }
+   button:hover {
+    background-color: grey;
+   }
+  
+  
+  /* General Styles */
+  * {
+      margin:  0;
+      padding:  0;
+      box-sizing: border-box;
+  }
+  
+  body {
+      font-family: Arial, sans-serif;
+      line-height:  1.6;
+  }
+  
+  /* Header Styles */
+  header {
+      background-color: #333;
+      color: white;
+      padding:  1rem;
+  }
+  
+  nav ul {
+      display: flex;
+      justify-content: space-around;
+      list-style: none;
+  }
+  
+  nav ul li a {
+      color: white;
+      text-decoration: none;
+  }
+  
+  /* Hero Section Styles */
+  .hero {
+      background-color: #f4f4f4;
+      padding:  2rem;
+      text-align: center;
+  }
+  
+  .search-container {
+      max-width:  600px;
+      margin:  0 auto;
+  }
+  
+  .search-container h1 {
+      font-size:  2rem;
+      margin-bottom:  1rem;
+  }
+  
+  .search-container form input[type="text"],
+  .search-container form select {
+      width:  100%;
+      padding:  0.5rem;
+      margin-bottom:  1rem;
+      border:  1px solid #ccc;
+  }
+  
+  .search-container form button {
+      background-color: #333;
+      color: white;
+      padding:  0.5rem  1rem;
+      border: none;
+      cursor: pointer;
+  }
+  
+  /* Featured Listings Styles */
+  .featured-listings {
+      padding:  2rem;
+  }
+  
+  .listing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px,  1fr));
+      gap:  1rem;
+  }
+  
+  .listing img {
+      width:  100%;
+      height: auto;
+  }
+  
+  .listing h3 {
+      margin:  0.5rem  0;
+  }
+  
+  .listing p {
+      margin-bottom:  1rem;
+  }
+  
+  .listing a {
+      color: #333;
+      text-decoration: none;
+  }
+  
+  /* Footer Styles */
+  footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding:  1rem;
+      position: fixed;
+      bottom:  0;
+      width:  100%;
+  }
+  

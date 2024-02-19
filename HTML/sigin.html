@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signup Page</title>
+<style>
+   body {
+     font-family: Arial, sans-serif;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+     background-color: #f0f0f0;
+   }
+   .card {
+     background-color: white;
+     padding: 20px;
+     border-radius: 8px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     margin: 10px;
+     width: 37em;
+
+   }
+   .input-group {
+     margin-bottom: 20px;
+   }
+   .input-group label {
+     display: block;
+     font-weight: bold;
+     margin-bottom: 5px;
+   }
+   .input-group input {
+     width: 100%;
+     padding: 8px;
+     border-radius: 4px;
+     border: 1px solid #ccc;
+   }
+   button {
+     padding: 10px 20px;
+     background-color: #007bff;
+     color: white;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+     position: relative;
+     left: 43%;
+   }
+</style>
+</head>
+<body>
+  <!-- <h1>Register here</h1> -->
+<form id="signupForm">
+<div class="card" id="emailCard">
+<!-- <h2>Email</h2> -->
+<div class="input-group">
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" placeholder="Enter your email" required>
+</div>
+</div>
+<div class="card" id="nameCard">
+<!-- <h2>Name</h2> -->
+<div class="input-group">
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" placeholder="Enter your name" required>
+</div>
+</div>
+<div class="card" id="passwordCard">
+<!-- <h2>Password</h2> -->
+<div class="input-group">
+<label for="password">Password:</label>
+<input type="password" id="password" name="password" placeholder="Enter your password" required>
+</div>
+</div>
+<div class="card" id="rePasswordCard">
+<!-- <h2>Re-enter Password</h2> -->
+<div class="input-group">
+<label for="repassword">Re-enter Password:</label>
+<input type="password" id="repassword" name="repassword" placeholder="Re-enter your password" required>
+</div>
+</div>
+<button type="submit">Sign Up</button>
+</form>
+<script>
+   document.getElementById('signupForm').addEventListener('submit', function(event) {
+     event.preventDefault();
+     var email = document.getElementById('email').value;
+     var name = document.getElementById('name').value;
+     var password = document.getElementById('password').value;
+     var repassword = document.getElementById('repassword').value;
+     // Perform validation or any other necessary logic here
+     console.log("Email: " + email);
+     console.log("Name: " + name);
+     console.log("Password: " + password);
+     console.log("Re-entered Password: " + repassword);
+     // Example: Check if password and re-entered password match
+     if (password !== repassword) {
+       alert("Passwords do not match!");
+       return;
+     }
+     // Perform further actions like submitting the form or making an AJAX request
+   });
+</script>
+</body>
+</html>
