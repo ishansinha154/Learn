@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Portal</title>
+    <link rel="stylesheet" href="./css/home.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body onload="myFunction()">
+    <div style="background-color: #e6e6e6;">
+        <nav class="navbar navbar-expand-lg" >
+            <div class="container">
+              <a class="navbar-brand" href="#">Broker View</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                  </li>
+                  <li class="nav-item" id="CreateBtn" style="display: none">
+                    <a class="nav-link" type="button" onclick="showCreateProperty()">Create Property</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" type="button" href="#">Contact Us</a>
+                  </li>
+    
+                </ul>
+                <div role="search" id="LoginSignupButton" style="display: block;">
+                    <a class="btn btn-outline-success" style="margin: 5px;" onclick="showLogin()">Login</a>
+                    <a class="btn btn-outline-success" style="margin: 5px;" onclick="showSignup()">Register</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </div>
+    
+    <!-- Div Filters -->
+    <div class="row maindiv" id="Div_FilterMain" style="background-color:black;color:white">
+        <div class="col-6">
+                <h4 >Search Your Location</h4>
+                <select class="form-control" value="" onchange="onloadata()">
+                  <option value="">Choose Your City</option>
+                  <option value="Pune">Pune</option>
+                  <option value="Pune">Banglore</option>
+                  <option value="Pune">Mumbai</option>
+                  <option value="Pune">Chennai</option>
+              </select>
+           
+        </div>
+        <div class="col-6" style="text-justify: auto;">
+            <h4>Apply Your Filter</h4>
+            <select id="filter_select" name="options" value="" class="form-control me-2" style="color:#737373">
+                <option value="">Choose</option>  
+                <option value="All">All</option>
+                <option value="Size">Size</option>
+                <option value="Amenities">Amenities</option>
+            </select>
+        </div>     
+    </div>
+
+
+
+  <!-- Div Card Container -->
+    <div class="maindiv" id="Div_CardConatiner" style="display: flex;flex-wrap: wrap;padding:10px;margin-left: 5px;">
+    </div>
+    
+
+    <!-- Login -->
+    <div class="container maindiv" id="Div_Login" style="background-image: url('https://w0.peakpx.com/wallpaper/732/244/HD-wallpaper-blue-stone-background-stone-texture-grunge-blue-background-creative-blue-texture-thumbnail.jpg');padding: 20px;display: none;">
+      <div class="container" style=" padding: 20px;width: 500px;background-color:  #f2f2f2;border: solid 2px;border-radius: 15px;margin-top: 20px;margin-left: 320px">
+          <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Log In</p>
+          <br>
+          <div class="field">
+            <input type="email" class="form-control" id="input_email" required placeholder="Email or Phone">
+          </div>
+          <br>
+          <div class="field space">
+            <input type="password" class="form-control" id="input_pass" required placeholder="Password">
+          </div>
+          <br>
+          <button  class="btn btn-primary"  style="width: 300px;margin-left: 80px;" onclick="ApplyLogin()">Login</button>
+        
+        <br>
+        <br>
+        <div class="row">
+          <div class="col" style="text-align: center;"><p>don't have account? <a type="button" onclick="showSignup()" style="color: blue;"> Register</a></p></div>
+        </div>
+        <div class="col" style="text-align: center;"><a type="button" style="color: blue;" onclick="ShowForgetView()">Change Password</a></div>
+    </div>
+    </div>
+
+
+
+
+<!-- Forget Password View -->
+
+<div class="container maindiv" id="Div_ForgetPass" style="background-image: url('https://w0.peakpx.com/wallpaper/732/244/HD-wallpaper-blue-stone-background-stone-texture-grunge-blue-background-creative-blue-texture-thumbnail.jpg');padding: 20px;display: none;">
+  <div class="container" style=" padding: 20px;width: 500px;background-color:  #f2f2f2;border: solid 2px;border-radius: 15px;margin-top: 20px;margin-left: 320px">
+    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Change Password</p>
+    <br>
+    <div class="form-control">
+      <input type="password" id="Input_OldPass" class="form-control" i required placeholder="Enter Old Password">
+    </div>
+    <br>
+    <div class="form-control">
+      <input type="password" class="form-control" id="Input_CurrentPass" required placeholder="Enter New Password">
+    </div>
+    <br>
+    <div class="form-control">
+      <input type="password" class="form-control" id="Input_ReCurrentPass" required placeholder="Re-enter New Password">
+    </div>
+    <br>
+    <button  class="btn btn-primary"  style="width: 300px;margin-left: 80px;" onclick="ApplyForgetPasswpord()">Update Password</button>
+  
+    <br>
+     <br>
+    <div class="row">
+      <div class="col" style="text-align: center;"><p>don't have account? <a type="button" style="color: blue;" onclick="showSignup()">Register</a></p></div>
+    </div>
+  </div>
+</div>
+
+    <!-- Property Create -->
+    <div class="container maindiv" id="Div_CreateProperty" style="background-image: url('https://w0.peakpx.com/wallpaper/732/244/HD-wallpaper-blue-stone-background-stone-texture-grunge-blue-background-creative-blue-texture-thumbnail.jpg');padding: 5px;display: none;" >
+      <div class="container" style=" margin-top: 10px;border: solid 2px;border-radius: 10px;width: 700px;margin-left: auto;margin-top:20px;padding: 10px;background-color: white;">
+          <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Create Property</p>
+          <div class="form">
+              <div class="row">
+                  <div class="col-3"><i class="bi bi-building"  style="margin-right: 5px;"></i><label for="form3Example1c" style="display: inline;">Property Name</label></div>
+                  <div class="col-7"><input type="text" id="Prop_Name" name="form3Example1c" class="form-control" style="display: inline;" placeholder="Enter Your Property Name Here"/></div>
+              </div>
+              <br>
+              <div class="row">
+                  <div class="col-3"><i class="bbi bi-geo-alt-fill"  style="margin-right: 5px;"></i><label for="form3Example1c" style="display: inline;">Property Location</label></div>
+                  <div class="col-7">
+                      <select class="form-control" id="Prop_Location" value="">
+                          <option value="Pune">Pune</option>
+                          <option value="Pune">Banglore</option>
+                          <option value="Pune">Mumbai</option>
+                          <option value="Pune">Chennai</option>
+                      </select>
+                  </div>
+              </div>
+              <br>
+              <div class="row">
+                  <div class="col-3"><i class="bi bi-building-gear"  style="margin-right: 5px;"></i><label for="form3Example1c" style="display: inline;">Property Status</label></div>
+                  <div class="col-7">
+                      <select class="form-control" id="Prop_Status" value="">
+                          <option value="Rental">Rental</option>
+                          <option value="Sale">Sale</option>
+                          <option value="Both Rental & Sale">Both Rental & Sale</option>
+                          
+                      </select>
+                  </div>
+              </div>
+              <br>
+              <div class="row">
+                  <div class="col-3"><i class="bi bi-envelope"  style="margin-right: 5px;"></i><label for="form3Example1c" style="display: inline;">Property Size</label></div>
+                  <div class="col-7"><input type="text"  id="Prop_Size" name="form3Example1c" class="form-control" style="display: inline;" placeholder="Enter Your Property Size Here"/></div>
+              </div>
+              <br> 
+              <div class="row">
+                  <div class="col-3"><i class="bi bi-cart-plus-fill"  style="margin-right: 5px;"></i><label for="form3Example1c" style="display: inline;">Amenities</label></div>
+                  <div class="col-7"><input type="text" id="Prop_Amenities" name="form3Example1c" class="form-control" style="display: inline;" placeholder="Enter Your Property Amenities Here"/></div>
+              </div>
+              <br>
+              <div class="row">
+                  <div class="col-3"><i class="bi bi-card-image"  style="margin-right: 5px;"></i><label for="form3Example1c" style="display: inline;">Upload Image</label></div>
+                  <div class="col-7"><input type="file" class="form-control" id="Prop_Image" onchange="loadFile(event)" /></div>
+              </div>
+              <br>
+              <div class="center">
+                  <button type="button" class="btn btn-primary" style="width: 250px;" onclick="CreateProperty(event)">Create Property</button>
+              </div>
+              
+          </div>
+      
+    </div>
+  </div>
+
+
+
+
+
+  <!-- Sign Up -->
+  <div class="container maindiv" id="Div_Signup" style="display: none;  background-image: url('https://w0.peakpx.com/wallpaper/732/244/HD-wallpaper-blue-stone-background-stone-texture-grunge-blue-background-creative-blue-texture-thumbnail.jpg');padding: 20px;">
+    <div class="container" style="margin-top: 10px;border: solid 2px;border-radius: 10px;width: 800px;margin-left: 150px;margin-top:20px;padding: 30px;background-color: white;">
+    
+        <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+        <div class="form">
+            <div class="row">
+                <div class="col-3"><i class="bi bi-person"  style="margin-right: 5px;"></i><label for="form3Example1c" style="display: inline;">Name</label></div>
+                <div class="col-7"><input type="text" id="input_RName" name="form3Example1c" class="form-control" style="display: inline;" placeholder="Enter Your Name Here"/></div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3"><i class="bi bi-envelope"  style="margin-right: 5px;"></i><label for="form3Example1c" style="display: inline;">Email</label></div>
+                <div class="col-7"><input type="email" id="input_REmail" name="form3Example1c" class="form-control" style="display: inline;" placeholder="Enter Your Email Here"/></div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3"><i class="bi bi-lock"  style="margin-right: 5px;"></i><label for="form3Example1c" style="display: inline;">Password</label></div>
+                <div class="col-7"><input type="password" id="input_RPass" name="form3Example1c" class="form-control" style="display: inline;" placeholder="Enter Your Password Here"/></div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3"><i class="bi bi-lock"  style="margin-right: 5px;"></i><label for="form3Example1c" style="display: inline;">Confirm Password</label></div>
+                <div class="col-7"><input type="password" id="input_RCPass" name="form3Example1c" class="form-control" style="display: inline;" placeholder="Confirm Your Password Here"/></div>
+            </div>
+            <br>
+            <br>
+            <div class="center">
+                <button type="button" class="btn btn-primary" style="width: 250px;" onclick="ApplyRegistration()"> Sign Up</button>
+            </div>
+        </div>
+    
+</div>
+  </div>
+    
+
+  <!-- Show Details Div -->
+    <div id="Div_ShowDetails" class="maindiv" style="background-image: url('https://w0.peakpx.com/wallpaper/732/244/HD-wallpaper-blue-stone-background-stone-texture-grunge-blue-background-creative-blue-texture-thumbnail.jpg');">        
+      
+    </div>
+
+
+<!-- Div for Editing The Property -->
+    <div id="Div_EditProperty" class="maindiv" style="background-image: url('https://w0.peakpx.com/wallpaper/732/244/HD-wallpaper-blue-stone-background-stone-texture-grunge-blue-background-creative-blue-texture-thumbnail.jpg');">
+   </div>
+</body>
+<script src="Main.js"></script>
+</html>
